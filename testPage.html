@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form id="file_form" method="post" enctype="multipart/form-data" onsubmit="submit_form(event); return false">
+        <input type="file" id="inputFile" name="filename">
+        
+        <br>
+        <br>
+        <br>
+
+        <button type="submit" id="BTN"> Submit </button>
+    </form>
+    
+
+    <script>
+        async function submit_form(event) {
+            const inputForm = await new FormData(document.forms.file_form);
+
+            inputForm.append("username", "white");
+            inputForm.append("videoTitle", "videoTitle");
+
+            const apiUrl = "http://localhost:5000/api/firebaseUpload";
+
+            let response = await fetch(apiUrl, {
+                method: 'POST',
+                body: inputForm
+            });
+            let data = await response.json();
+
+            console.log(data);
+        };
+        
+    </script>
+</body>
+</html>
