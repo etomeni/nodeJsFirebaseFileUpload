@@ -7,7 +7,7 @@ import fileUpload from 'express-fileupload';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 
-import firebaseRoute from './routes/firebase/firebaseUpload/js';
+import firebaseRoute from './routes/firebase/firebaseUpload.js';
 import { get404, get500 } from './controllers/error.js';
 
 const app = express();

@@ -1,6 +1,6 @@
 const config = {
     // Wisdom's firebase project configurations
-    firebaseConfig = {
+    firebaseConfig: {
         apiKey: "AIzaSyBGXw53-_Wta-1KlK4HDdrSN8ioo_k0JSc",
         authDomain: "jsvideos-9169b.firebaseapp.com",
         projectId: "jsvideos-9169b",
